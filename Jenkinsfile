@@ -25,6 +25,10 @@ pipeline {
                             if (!warExists) {
                                 error("❌ WAR file not found! Build failed.")
                             }
+                            else{
+                                echo "War file exists"
+                            }
+
                         }
                     }
                 }
