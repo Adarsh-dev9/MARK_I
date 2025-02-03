@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        TOMCAT_USER = 'jenkins'
-        TOMCAT_PASSWORD = 'jenkins123'
+        TOMCAT_USER = 'robot'
+        TOMCAT_PASSWORD = 'robot'
         TOMCAT_HOST = 'http://localhost:8081'
     }
 
