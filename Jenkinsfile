@@ -18,6 +18,16 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+         stage('Verify WAR File') {
+                    steps {
+                        script {
+                            def warExists = fileExists('target/mark-1-webapp-adarsh-1.0.0-SNAPSHOT.war')
+                            if (!warExists) {
+                                error("❌ WAR file not found! Build failed.")
+                            }
+                        }
+                    }
+                }
         stage('Deploy to Tomcat') {
             steps {
                 sh '''
