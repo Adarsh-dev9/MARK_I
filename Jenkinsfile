@@ -36,8 +36,8 @@ pipeline {
             steps {
                 sh '''
                 curl -v --upload-file target/mark-1-webapp-adarsh-1.0.0-SNAPSHOT.war \
-                "$TOMCAT_USER:$TOMCAT_PASSWORD@$TOMCAT_HOST/manager/text/deploy?path=/mark-1-webapp-adarsh-1.0.0-SNAPSHOT&update=true"
-                '''
+                     --user "robot:robot" "http://localhost:8081/manager/text/deploy?path=/mark-1-webapp-adarsh-1.0.0-SNAPSHOT&update=true"
+                     '''
             }
         }
     }
